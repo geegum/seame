@@ -1,0 +1,19 @@
+fanon
+sudo jetson_clocks
+sudo sh -c 'echo 100 > /sys/devices/pwm-fan/target_pwm'
+
+
+fanon full
+sudo sh -c 'echo 255 > /sys/devices/pwm-fan/target_pwm'
+
+fanoff
+sudo sh -c 'echo 0 > /sys/devices/pwm-fan/target_pwm'
+
+
+
+check port
+ls -l /dev/ttyACM0
+
+authorize for arduino
+sudo usermod -a -G dialout jetson
+sudo chmod a+rw /dev/ttyACM0
